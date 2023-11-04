@@ -45,7 +45,7 @@ print(logs)
 
 When a `start_time` is specified with only a date, the system defaults to the beginning of that day (00:00:00). In the absence of an `end_time`, logs are retrieved from the `start_time` to the last available entry. If a `camera_id` is not provided, the system will collect logs across all cameras. Should both `start_time` and `end_time` be omitted, the system will return the complete set of logs.
 
-*Note*: Time must be provided in UTC only (for now).
+> **Note**: Time must be provided in UTC only (for now).
 
 #### Advanced Log Retrieval
 
@@ -132,7 +132,7 @@ client = LogsAPI(
 )
 ```
 
-*Note*: By default, `post_logs` is set to `False` to prevent the transmission of large static blocks of data to the webhook.
+> **Note**: By default, `post_logs` is set to `False` to prevent the transmission of large static blocks of data to the webhook.
 
 ### File Logging and Log Level
 
