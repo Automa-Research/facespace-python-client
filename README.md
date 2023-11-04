@@ -186,7 +186,7 @@ client = LogsAPI(
 ## Example Code: Fetching Logs for an Entire Day
 
 ```python
-from facespace import LogsAPI
+from facespace import LogsAPI, FaceSpaceError
 import os
 
 # Initialize the client with your API key
