@@ -1,0 +1,10 @@
+LICENSE.txt
+README.md
+setup.py
+facespace/__init__.py
+facespace/facespace_client.py
+facespace.egg-info/PKG-INFO
+facespace.egg-info/SOURCES.txt
+facespace.egg-info/dependency_links.txt
+facespace.egg-info/requires.txt
+facespace.egg-info/top_level.txt
