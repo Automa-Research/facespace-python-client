@@ -222,7 +222,7 @@ except FaceSpaceError as e:
     'TestCamera': [
         'Alice @ 00:05:22 23/10/23',
         'Bob @ 11:15:47 23/10/23',
-        ...
+        # ...
         'Eve @ 23:59:59 23/10/23'
     ]
 }
@@ -237,7 +237,7 @@ except FaceSpaceError as e:
         'Charlie @ 07:30:00 23/10/23',
         'Dana @ 18:45:30 23/10/23'
     ],
-    ...
+    # ...
 }
 
 # Example output for real-time logs
