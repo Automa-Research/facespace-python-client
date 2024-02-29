@@ -17,7 +17,7 @@ from urllib3.util.retry import Retry
 from requests.adapters import HTTPAdapter
 
 
-API_BASE_URL = "https://vision.automa.one"
+API_BASE_URL = "https://visioncore.automa.one"
 
 
 logging.basicConfig(

@@ -2,9 +2,9 @@ from setuptools import setup, find_packages
 
 setup(
     name='facespace',
-    version='0.1.0',
+    version='0.1.1',
     author='Automa',
-    author_email='founder@automa.one',
+    author_email='facespace@automa.one',
     description='A client for FaceSpace API services',
     long_description=open('README.md').read(),
     long_description_content_type='text/markdown',
@@ -20,7 +20,6 @@ setup(
         'Intended Audience :: Developers',
         'Intended Audience :: Information Technology',
         'Intended Audience :: Science/Research',
-        'Intended Audience :: System Integrators',
         'License :: OSI Approved :: MIT License',
         'Programming Language :: Python :: 3',
         'Programming Language :: Python :: 3.8',
