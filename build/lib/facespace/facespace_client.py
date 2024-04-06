@@ -17,7 +17,7 @@ from urllib3.util.retry import Retry
 from requests.adapters import HTTPAdapter
 
 
-API_BASE_URL = "https://visioncore.automa.one"
+API_BASE_URL = "https://visionapi.automa.one/facespace"
 
 
 logging.basicConfig(
@@ -75,7 +75,7 @@ class ForLoopError(FaceSpaceError):
 
 class LogsAPI:
     """The main class to use for communicating with FaceSpace APIs"""
-    def __init__(self, api_key=None, log_to_file=False, log_level=logging.INFO, file_log_level=logging.DEBUG, additional_headers=None, webhook_url=None, post_realtime=True, post_logs=False):
+    def __init__(self, api_key=None, log_to_file=False, log_level=logging.INFO, file_log_level=logging.DEBUG, additional_headers=None, webhook_url=None, post_realtime=True, post_logs=False, gaze_detection=False):
         """
         Summary:
             Initializes the logging API client with configurable parameters.
@@ -110,7 +110,7 @@ class LogsAPI:
         signal.signal(signal.SIGINT, self.signal_handler)  # Set up signal handling for graceful shutdown
         self.request_count = 0  # Initialize the request count
         self.last_active_time = None  # Initialize the last active time
-        
+        self.gaze_detection = gaze_detection
         # Additional headers for HTTP requests
         self.additional_headers = additional_headers or {}
         
@@ -403,16 +403,11 @@ class LogsAPI:
             params['end_time'] = self._parse_date(end_time)  # Parse and add end time to parameters
         if camera_id:
             params['camera_id'] = camera_id  # Add camera ID to parameters if provided
-        return self._response("/api/logs", params=params)  # Make the API call and return the response
-
-
+        return self._response("/logs", params=params)  # Make the API call and return the response
 
     ##########################################################
-    #      REALTIME API SECTION BELOW, DO NOT TAMPER         #
+    #     REALTIME API SECTION BELOW, DO NOT TAMPER 💀      #
     ##########################################################
-    
-    
-    
     
     def fetch_logs(self):
         """
@@ -431,7 +426,7 @@ class LogsAPI:
             - Raises StopLogsSignal if a stop signal is detected in the log indicating no active cameras.
             - Raises HTTPRequestError if the response from the server is not successful (non-200 status code).
         """
-        response = self.session.get(API_BASE_URL + "/api/recognition", headers=self.headers)  # Perform a GET request to fetch logs
+        response = self.session.get(API_BASE_URL + "/recognition", headers=self.headers)  # Perform a GET request to fetch logs
         if response.status_code == 200:
             log = response.json()  # Parse the log from the response
             # Check for a stop signal in the log
