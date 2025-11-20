@@ -1,6 +1,8 @@
 
 # FaceSpace Python API Client
 
+> Note: This is deprecated and will no longer work.
+
 FaceSpace is a sophisticated Python package designed for developers to seamlessly interface with the `vision.automa.one` API. It offers a comprehensive toolkit for logging, real-time data retrieval, and camera management. The package is built with asynchronous operations in mind, ensuring optimal performance in high-throughput applications.
 
 ---
@@ -260,3 +262,4 @@ For support, issues, or feature requests, please file an issue on our [GitHub Is
 FaceSpace API Client is released under the MIT License. See the LICENSE file in the repository for more details.
 
 ---
+
